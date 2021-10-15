@@ -162,7 +162,8 @@ public class Main {
                 case "leave":
                     terminate = 1;
                     break;
-
+                default:
+                    break;
             }
 
         }
