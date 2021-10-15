@@ -184,8 +184,8 @@ public class Main {
 
     public static String generateID(){
         String id = "";
+        Random r = new Random();
         for(int i=0; i<7; i++){
-            Random r = new Random();
             if(r.nextBoolean()) {
                 char c = (char) (r.nextInt(26) + 'a');
                 id = id + c;
