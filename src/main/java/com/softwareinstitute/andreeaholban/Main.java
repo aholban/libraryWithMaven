@@ -220,6 +220,8 @@ public class Main {
         items.add(book);
         book = new Book("Pride and prejudice", "Jane Austen", null, generateID(), Boolean.TRUE, "physical", "Romance", 1, 5, generateID(), "available");
         items.add(book);
+        book = new Book("Emma", "Jane Austen", null, generateID(), Boolean.TRUE, "physical", "Romance", 1, 5, generateID(), "available");
+        items.add(book);
     }
 
     public static void addBook(List<LibraryItem> items, String itemToAdd, String title, String author, String format, String section){
