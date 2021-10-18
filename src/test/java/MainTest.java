@@ -29,6 +29,16 @@ public class MainTest {
     }
 
     @Test
+    public void testFindExistingGenres(){
+        List<LibraryItem> items = new ArrayList<>();
+        setupCollection(items);
+        List<String> genres = findExistingGenres(items);
+        assertEquals(Boolean.TRUE, genres.contains("Fantasy"));
+        assertEquals(Boolean.TRUE, genres.contains("Romance"));
+    }
+
+
+    @Test
     public void testSetUpCollection(){
         List<LibraryItem> items = new ArrayList<>();
         setupCollection(items);

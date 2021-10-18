@@ -5,35 +5,13 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
-
-        List<Member> members = new ArrayList<Member>();
-        List<LibraryItem> items = new ArrayList<LibraryItem>();
+        List<LibraryItem> items = new ArrayList<>();
         setupCollection(items);
-        int terminate =0;
-        while (terminate ==0){
-            System.out.println("Welcome to the Library! What do you want to do?");
-            System.out.println("Type \"visitor\" if you are here as a visitor");
-            System.out.println("Type \"add book\" if you want to add a book to the collection");
-            System.out.println("Type \"leave\" if you wish to leave");
-            String command = input.nextLine();
-            switch (command){
-                case "visitor":
-                    break;
-                case "add book":
-                    break;
-                case "leave":
-                    terminate = 1;
-                    break;
-                default:
-                    break;
-            }
-        }
 
     }
 
 
-    public static void printExistingGenres(List<LibraryItem> items){
+    public static List<String> findExistingGenres(List<LibraryItem> items){
         List<String> genres = new ArrayList<>();
         for( LibraryItem item: items){
             String genre = item.getSection();
@@ -41,9 +19,7 @@ public class Main {
                 genres.add(genre);
             }
         }
-        for( String genre: genres){
-            System.out.println(genre);
-        }
+        return genres;
     }
 
     public static Member findMember(List<Member> members, String name, String id){
