@@ -184,20 +184,20 @@ import java.util.*;
     }
 
     public static String generateID(){
-<span class="nc" id="L187">        String id = &quot;&quot;;</span>
-<span class="nc" id="L188">        Random r = new Random();</span>
-<span class="nc bnc" id="L189" title="All 2 branches missed.">        for(int i=0; i&lt;7; i++){</span>
-<span class="nc bnc" id="L190" title="All 2 branches missed.">            if(r.nextBoolean()) {</span>
-<span class="nc" id="L191">                char c = (char) (r.nextInt(26) + 'a');</span>
-<span class="nc" id="L192">                id = id + c;</span>
-<span class="nc" id="L193">            }</span>
+<span class="fc" id="L187">        String id = &quot;&quot;;</span>
+<span class="fc" id="L188">        Random r = new Random();</span>
+<span class="fc bfc" id="L189" title="All 2 branches covered.">        for(int i=0; i&lt;7; i++){</span>
+<span class="fc bfc" id="L190" title="All 2 branches covered.">            if(r.nextBoolean()) {</span>
+<span class="fc" id="L191">                char c = (char) (r.nextInt(26) + 'a');</span>
+<span class="fc" id="L192">                id = id + c;</span>
+<span class="fc" id="L193">            }</span>
             else{
-<span class="nc" id="L195">                int c = r.nextInt(10);</span>
-<span class="nc" id="L196">                id = id + c;</span>
+<span class="fc" id="L195">                int c = r.nextInt(10);</span>
+<span class="fc" id="L196">                id = id + c;</span>
             }
         }
 
-<span class="nc" id="L200">        return id;</span>
+<span class="fc" id="L200">        return id;</span>
     }
 
     public static Member register(List&lt;Member&gt; members){
@@ -214,11 +214,11 @@ import java.util.*;
     }
 
     public static void setupCollection(List&lt;LibraryItem&gt; items){
-<span class="nc" id="L217">        LibraryItem book = new Book(&quot;Mistborn&quot;, &quot;Brandon Sanderson&quot;, null, generateID(), Boolean.TRUE, &quot;physical&quot;, &quot;Fantasy&quot;, 1, 5, generateID(), &quot;available&quot;);</span>
-<span class="nc" id="L218">        items.add(book);</span>
-<span class="nc" id="L219">        book = new Book(&quot;Harry Potter&quot;, &quot;JK Rowling&quot;, null, generateID(), Boolean.FALSE, &quot;physical&quot;, &quot;Fantasy&quot;, 1, 5, generateID(), &quot;available&quot;);</span>
-<span class="nc" id="L220">        items.add(book);</span>
-<span class="nc" id="L221">    }</span>
+<span class="fc" id="L217">        LibraryItem book = new Book(&quot;Mistborn&quot;, &quot;Brandon Sanderson&quot;, null, generateID(), Boolean.TRUE, &quot;physical&quot;, &quot;Fantasy&quot;, 1, 5, generateID(), &quot;available&quot;);</span>
+<span class="fc" id="L218">        items.add(book);</span>
+<span class="fc" id="L219">        book = new Book(&quot;Harry Potter&quot;, &quot;JK Rowling&quot;, null, generateID(), Boolean.FALSE, &quot;physical&quot;, &quot;Fantasy&quot;, 1, 5, generateID(), &quot;available&quot;);</span>
+<span class="fc" id="L220">        items.add(book);</span>
+<span class="fc" id="L221">    }</span>
 
     public static void addBook(List&lt;LibraryItem&gt; items, String itemToAdd, String title, String author, String format, String section){
 <span class="nc" id="L224">        int itemAlreadyExists=0;</span>

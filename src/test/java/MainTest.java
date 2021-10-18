@@ -1,4 +1,5 @@
 
+import com.softwareinstitute.andreeaholban.LibraryItem;
 import com.softwareinstitute.andreeaholban.Member;
 import org.junit.Test;
 
@@ -7,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import static com.softwareinstitute.andreeaholban.Main.findMember;
+import static com.softwareinstitute.andreeaholban.Main.setupCollection;
 import static org.junit.Assert.assertEquals;
 
 
@@ -21,5 +23,12 @@ public class MainTest {
         Member visitor = findMember(members, person.getName(), person.getCardID());
         assertEquals(person.getName(), visitor.getName());
         assertEquals(person.getCardID(), person.getCardID());
+    }
+
+    @Test
+    public void testSetUpCollection(){
+        List<LibraryItem> items = new ArrayList<>();
+        setupCollection(items);
+        assertEquals("Mistborn", items.get(0).getTitle());
     }
 }
