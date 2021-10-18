@@ -175,12 +175,13 @@ public class Main {
 
 
     public static Member findMember(List<Member> members, String name, String id){
+        Member result = null;
         for(Member visitor : members){
             if(visitor.getName().equals(name) && visitor.getCardID().equals(id))
-                return visitor;
+                result = visitor;
         }
 
-        return null;
+        return result;
     }
 
     public static String generateID(){

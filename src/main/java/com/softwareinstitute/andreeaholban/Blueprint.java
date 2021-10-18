@@ -10,10 +10,14 @@ public class Blueprint extends LibraryItem{
     private String author;
 
     //////////////////////////////////Constructors////////////////////////////////////////////////////////////////////
-    public Blueprint(String title, String author, LocalDate publicationDate, String ISBN, Boolean isBorrowable, String format, String section, int shelf, int copiesAvailable) {
-        super(title, publicationDate, ISBN, isBorrowable, format, section, shelf, copiesAvailable);
+
+    public Blueprint(String title, String author){
+        super(title);
         this.author = author;
     }
+
+
+    ///////////////////////////////////////Methods/////////////////////////////////////////////////////////////////////
 
     @Override
     public String getAuthor() {

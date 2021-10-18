@@ -20,9 +20,11 @@ public class MainTest {
         List<Member> members = new ArrayList<>();
         members.add(person);
         members.add(person2);
-        Member visitor = findMember(members, person.getName(), person.getCardID());
-        assertEquals(person.getName(), visitor.getName());
-        assertEquals(person.getCardID(), person.getCardID());
+        Member visitor = findMember(members, "Andreea Holban", "12345");
+        assertEquals("Andreea Holban", visitor.getName());
+        assertEquals("12345", person.getCardID());
+        Member visitor2 = findMember(members, "Alex", "6789");
+        assertEquals(null, visitor2);
     }
 
     @Test

@@ -17,6 +17,10 @@ public abstract class LibraryItem implements Searchable{
 
     ///////////////////////////////////////Constraints////////////////////////////////////////////////
 
+    public LibraryItem(String title){
+        this.title = title;
+    }
+
     public LibraryItem(String title, LocalDate publicationDate, String ISBN, Boolean isBorrowable, String format, String section, int shelf, int copiesAvailable){
         this.title = title;
         this.publicationDate = publicationDate;

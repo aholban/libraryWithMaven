@@ -12,6 +12,11 @@ public class Document extends LibraryItem{
     private List<String> references;
 
     ///////////////////////////////////////////////Constructors/////////////////////////////////////////////////////////////////
+    public Document(String title, String author){
+        super(title);
+        this.authors = author;
+    }
+
     public Document(String title, String author, LocalDate publicationDate, String ISBN, Boolean isBorrowable, String format, String section, int shelf, int copiesAvailable, int citationsNumber, List<String> references) {
         super(title, publicationDate, ISBN, isBorrowable, format, section, shelf, copiesAvailable);
         this.authors = author;
