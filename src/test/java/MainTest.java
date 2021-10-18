@@ -1,5 +1,6 @@
 
 import com.softwareinstitute.andreeaholban.LibraryItem;
+import com.softwareinstitute.andreeaholban.Main;
 import com.softwareinstitute.andreeaholban.Member;
 import org.junit.Test;
 
@@ -32,5 +33,13 @@ public class MainTest {
         List<LibraryItem> items = new ArrayList<>();
         setupCollection(items);
         assertEquals("Mistborn", items.get(0).getTitle());
+    }
+
+    @Test
+    public void testRegister(){
+        List<Member> members = new ArrayList<>();
+        Member visitor = Main.register(members, "Andreea");
+        assertEquals("Andreea", members.get(0).getName());
+        assertEquals("Andreea", visitor.getName());
     }
 }
