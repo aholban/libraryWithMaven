@@ -175,9 +175,9 @@ import java.util.*;
 
 
     public static Member findMember(List&lt;Member&gt; members, String name, String id){
-<span class="nc bnc" id="L178" title="All 2 branches missed.">        for(Member visitor : members){</span>
-<span class="nc bnc" id="L179" title="All 4 branches missed.">            if(visitor.getName().equals(name) &amp;&amp; visitor.getCardID().equals(id))</span>
-<span class="nc" id="L180">                return visitor;</span>
+<span class="pc bpc" id="L178" title="1 of 2 branches missed.">        for(Member visitor : members){</span>
+<span class="pc bpc" id="L179" title="2 of 4 branches missed.">            if(visitor.getName().equals(name) &amp;&amp; visitor.getCardID().equals(id))</span>
+<span class="fc" id="L180">                return visitor;</span>
 <span class="nc" id="L181">        }</span>
 
 <span class="nc" id="L183">        return null;</span>
