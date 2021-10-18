@@ -24,20 +24,6 @@ public class BookTest {
         assertEquals( "Jane Austen", book.getAuthor());
     }
 
-
-    @Test
-    public void testGetRefNo(){
-        Book book = new Book("Pride and Prejudice", "Jane Austen", Boolean.TRUE, "available", "38820");
-        assertEquals("38820", book.getRefNumber());
-    }
-
-    @Test
-    public void testSetRefNo(){
-        Book book = new Book("Pride and Prejudice", "Jane Austen", Boolean.TRUE, "available", "38820");
-        book.setRefNumber("1234");
-        assertEquals("1234", book.getRefNumber());
-    }
-
     @Test
     public void testGetStatus(){
         Book book = new Book("Pride and Prejudice", "Jane Austen", Boolean.TRUE, "available");

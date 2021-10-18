@@ -5,10 +5,46 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
+        Scanner input = new Scanner(System.in);
 
+        List<Member> members = new ArrayList<Member>();
+        List<LibraryItem> items = new ArrayList<LibraryItem>();
+        setupCollection(items);
+        int terminate =0;
+        while (terminate ==0){
+            System.out.println("Welcome to the Library! What do you want to do?");
+            System.out.println("Type \"visitor\" if you are here as a visitor");
+            System.out.println("Type \"add book\" if you want to add a book to the collection");
+            System.out.println("Type \"leave\" if you wish to leave");
+            String command = input.nextLine();
+            switch (command){
+                case "visitor":
+                    break;
+                case "add book":
+                    break;
+                case "leave":
+                    terminate = 1;
+                    break;
+                default:
+                    break;
+            }
+        }
 
     }
 
+
+    public static void printExistingGenres(List<LibraryItem> items){
+        List<String> genres = new ArrayList<>();
+        for( LibraryItem item: items){
+            String genre = item.getSection();
+            if(!genres.contains(genre)){
+                genres.add(genre);
+            }
+        }
+        for( String genre: genres){
+            System.out.println(genre);
+        }
+    }
 
     public static Member findMember(List<Member> members, String name, String id){
         Member result = null;
@@ -20,26 +56,21 @@ public class Main {
         return result;
     }
 
-    public static String generateID(){
+    public static String generateMemberID(List<Member> members){
         String id = "";
-        Random r = new Random();
-        for(int i=0; i<7; i++){
-            if(r.nextBoolean()) {
-                char c = (char) (r.nextInt(26) + 'a');
-                id = id + c;
-            }
-            else{
-                int c = r.nextInt(10);
-                id = id + c;
-            }
-        }
+        id = id + members.size()+1;
+        return id;
+    }
 
+    public static String generateLibraryID(List<LibraryItem> items){
+        String id = "";
+        id = id + items.size()+1;
         return id;
     }
 
     public static Member register(List<Member> members, String name){
 
-        String id = generateID();
+        String id = generateMemberID(members);
         Member visitor = new Member(name, id);
         members.add(visitor);
         System.out.println("Name: " + visitor.getName());
@@ -49,13 +80,13 @@ public class Main {
     }
 
     public static void setupCollection(List<LibraryItem> items){
-        LibraryItem book = new Book("Mistborn", "Brandon Sanderson", null, generateID(), Boolean.TRUE, "physical", "Fantasy", 1, 5, generateID(), "available");
+        LibraryItem book = new Book("Mistborn", "Brandon Sanderson", null, generateLibraryID(items), Boolean.TRUE, "physical", "Fantasy", 1, 5, "available");
         items.add(book);
-        book = new Book("Harry Potter", "JK Rowling", null, generateID(), Boolean.FALSE, "physical", "Fantasy", 1, 5, generateID(), "available");
+        book = new Book("Harry Potter", "JK Rowling", null, generateLibraryID(items), Boolean.FALSE, "physical", "Fantasy", 1, 5, "available");
         items.add(book);
-        book = new Book("Pride and prejudice", "Jane Austen", null, generateID(), Boolean.TRUE, "physical", "Romance", 1, 5, generateID(), "available");
+        book = new Book("Pride and prejudice", "Jane Austen", null, generateLibraryID(items), Boolean.TRUE, "physical", "Romance", 1, 5, "available");
         items.add(book);
-        book = new Book("Emma", "Jane Austen", null, generateID(), Boolean.TRUE, "physical", "Romance", 1, 5, generateID(), "available");
+        book = new Book("Emma", "Jane Austen", null, generateLibraryID(items), Boolean.TRUE, "physical", "Romance", 1, 5, "available");
         items.add(book);
     }
 
@@ -70,11 +101,11 @@ public class Main {
         }
         if(itemAlreadyExists == 0){
             if(itemToAdd.equals("book")) {
-                newItem = new Book(title, author, null, generateID(), Boolean.TRUE, format, section, 1, 1, generateID(), "available");
+                newItem = new Book(title, author, null, generateLibraryID(items), Boolean.TRUE, format, section, 1, 1, "available");
                 items.add(newItem);
             }
             else if(itemToAdd.equals("document")){
-                newItem = new Document(title, author, null, generateID(), Boolean.TRUE, format, section, 1, 1, 0, references);
+                newItem = new Document(title, author, null, generateLibraryID(items), Boolean.TRUE, format, section, 1, 1, 0, references);
                 items.add(newItem);
             }
             else {

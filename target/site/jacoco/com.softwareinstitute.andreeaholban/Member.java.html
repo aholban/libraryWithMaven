@@ -30,7 +30,7 @@ public class Member implements Searchable{
 
     public String borrow(LibraryItem book){
 <span class="fc" id="L32">        String result = &quot;&quot;;</span>
-<span class="fc bfc" id="L33" title="All 2 branches covered.">        if(book.getBorrowable()){</span>
+<span class="fc bfc" id="L33" title="All 2 branches covered.">        if(Boolean.TRUE.equals(book.getBorrowable())){</span>
 <span class="fc bfc" id="L34" title="All 4 branches covered.">            if(this.numberBooksBorrowed&lt;5 &amp;&amp; book.getCopiesAvailable()&gt;0){</span>
 <span class="fc bfc" id="L35" title="All 2 branches covered.">                if(!book.getFormat().equals(&quot;digital&quot;)) {</span>
 <span class="fc" id="L36">                    book.setCopiesAvailable(book.getCopiesAvailable() - 1);</span>
@@ -53,46 +53,51 @@ public class Member implements Searchable{
 <span class="fc" id="L53">        return result;</span>
     }
 
-    public void readingInLibrary(LibraryItem book){
-<span class="fc" id="L57">        book.setCopiesAvailable(book.getCopiesAvailable() - 1);</span>
-<span class="fc" id="L58">        System.out.println(&quot;You are reading &quot; + book.getTitle() + &quot; in the library.&quot;);</span>
+    public void returnBook(LibraryItem book){
+<span class="fc" id="L57">        book.setCopiesAvailable(book.getCopiesAvailable() + 1);</span>
+<span class="fc" id="L58">        this.numberBooksBorrowed = numberBooksBorrowed -1;</span>
 <span class="fc" id="L59">    }</span>
 
-    public void finishedReading(LibraryItem book){
-<span class="fc" id="L62">        book.setCopiesAvailable(book.getCopiesAvailable() + 1);</span>
-<span class="fc" id="L63">        System.out.println(&quot;Finished reading &quot; + book.getTitle() );</span>
+    public void readingInLibrary(LibraryItem book){
+<span class="pc bpc" id="L62" title="1 of 2 branches missed.">        if(!book.getFormat().equals(&quot;digital&quot;)) book.setCopiesAvailable(book.getCopiesAvailable() - 1);</span>
+<span class="fc" id="L63">        System.out.println(&quot;You are reading &quot; + book.getTitle() + &quot; in the library.&quot;);</span>
 <span class="fc" id="L64">    }</span>
 
+    public void finishedReading(LibraryItem book){
+<span class="fc" id="L67">        book.setCopiesAvailable(book.getCopiesAvailable() + 1);</span>
+<span class="fc" id="L68">        System.out.println(&quot;Finished reading &quot; + book.getTitle() );</span>
+<span class="fc" id="L69">    }</span>
+
     public String getName() {
-<span class="fc" id="L67">        return name;</span>
+<span class="fc" id="L72">        return name;</span>
     }
 
     public void setName(String name) {
-<span class="fc" id="L71">        this.name = name;</span>
-<span class="fc" id="L72">    }</span>
+<span class="fc" id="L76">        this.name = name;</span>
+<span class="fc" id="L77">    }</span>
 
     public String getCardID() {
-<span class="fc" id="L75">        return cardID;</span>
+<span class="fc" id="L80">        return cardID;</span>
     }
 
     public void setCardID(String cardID) {
-<span class="fc" id="L79">        this.cardID = cardID;</span>
-<span class="fc" id="L80">    }</span>
+<span class="fc" id="L84">        this.cardID = cardID;</span>
+<span class="fc" id="L85">    }</span>
 
     public LocalDate getIssuedDate() {
-<span class="fc" id="L83">        return issuedDate;</span>
+<span class="fc" id="L88">        return issuedDate;</span>
     }
 
     public void setIssuedDate(LocalDate issuedDate) {
-<span class="fc" id="L87">        this.issuedDate = issuedDate;</span>
-<span class="fc" id="L88">    }</span>
+<span class="fc" id="L92">        this.issuedDate = issuedDate;</span>
+<span class="fc" id="L93">    }</span>
 
     public int getNumberBooksBorrowed() {
-<span class="fc" id="L91">        return numberBooksBorrowed;</span>
+<span class="fc" id="L96">        return numberBooksBorrowed;</span>
     }
 
     public void setNumberBooksBorrowed(int numberBooksBorrowed) {
-<span class="fc" id="L95">        this.numberBooksBorrowed = numberBooksBorrowed;</span>
-<span class="fc" id="L96">    }</span>
+<span class="fc" id="L100">        this.numberBooksBorrowed = numberBooksBorrowed;</span>
+<span class="fc" id="L101">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

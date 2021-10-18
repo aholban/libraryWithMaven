@@ -63,10 +63,10 @@ public class LibraryItemTest {
     @Test
     public void testFindLocation(){
         Book book = new Book("Pride and Prejudice", "Jane Austen", Boolean.TRUE, "available");
-        book.setFormat("Digital");
+        book.setFormat("digital");
         String location = book.findLocation();
         assertEquals("Check our digital catalogue on one of our computers.", location);
-        book.setFormat("Physical");
+        book.setFormat("physical");
         book.setSection("Romance");
         book.setShelf(5);
         location = book.findLocation();

@@ -10,20 +10,24 @@ public class Blueprint extends LibraryItem{
     private String author;
 
     //////////////////////////////////Constructors////////////////////////////////////////////////////////////////////
-    public Blueprint(String title, String author, LocalDate publicationDate, String ISBN, Boolean isBorrowable, String format, String section, int shelf, int copiesAvailable) {
-<span class="nc" id="L14">        super(title, publicationDate, ISBN, isBorrowable, format, section, shelf, copiesAvailable);</span>
-<span class="nc" id="L15">        this.author = author;</span>
-<span class="nc" id="L16">    }</span>
+
+    public Blueprint(String title, String author){
+<span class="fc" id="L15">        super(title);</span>
+<span class="fc" id="L16">        this.author = author;</span>
+<span class="fc" id="L17">    }</span>
+
+
+    ///////////////////////////////////////Methods/////////////////////////////////////////////////////////////////////
 
     @Override
     public String getAuthor() {
-<span class="nc" id="L20">        return author;</span>
+<span class="fc" id="L24">        return author;</span>
     }
 
     @Override
     public void setAuthor(String author) {
-<span class="nc" id="L25">        this.author = author;</span>
-<span class="nc" id="L26">    }</span>
+<span class="fc" id="L29">        this.author = author;</span>
+<span class="fc" id="L30">    }</span>
 
     ////////////////////////////////////Methods///////////////////////////////////////////////////////////////////////
 }

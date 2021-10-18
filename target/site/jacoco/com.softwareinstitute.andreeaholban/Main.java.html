@@ -25,234 +25,231 @@ import java.util.*;
 <span class="nc" id="L25">                    System.out.println(&quot;Hello! Are you new here? (yes/no)&quot;);</span>
 <span class="nc" id="L26">                    String isNew = input.nextLine();</span>
 <span class="nc bnc" id="L27" title="All 2 branches missed.">                    if (isNew.equals(&quot;yes&quot;)) {</span>
-<span class="nc" id="L28">                        visitor = register(members);</span>
+<span class="nc" id="L28">			System.out.println(&quot;What is your full name?&quot;);</span>
+<span class="nc" id="L29">        		String name = input.nextLine();</span>
+<span class="nc" id="L30">                        visitor = register(members, name);</span>
 
-                    }
-<span class="nc bnc" id="L31" title="All 2 branches missed.">                    else if(isNew.equals(&quot;no&quot;)){</span>
-<span class="nc" id="L32">                        System.out.println(&quot;What is your full name?&quot;);</span>
-<span class="nc" id="L33">                        String name = input.nextLine();</span>
-<span class="nc" id="L34">                        System.out.println(&quot;What is your card ID?&quot;);</span>
-<span class="nc" id="L35">                        String id = input.nextLine();</span>
-<span class="nc" id="L36">                        visitor = findMember(members, name, id);</span>
-<span class="nc bnc" id="L37" title="All 2 branches missed.">                        if (visitor == null) {</span>
-<span class="nc" id="L38">                            System.out.println(&quot;It seems you are not in our record. Do you wish to register? (yes/no)&quot;);</span>
-<span class="nc" id="L39">                            String toRegister = input.nextLine();</span>
-<span class="nc bnc" id="L40" title="All 2 branches missed.">                            if(toRegister.equals(&quot;yes&quot;)){</span>
-<span class="nc" id="L41">                                visitor = register(members);</span>
+<span class="nc" id="L32">                    }</span>
+<span class="nc bnc" id="L33" title="All 2 branches missed.">                    else if(isNew.equals(&quot;no&quot;)){</span>
+<span class="nc" id="L34">                        System.out.println(&quot;What is your full name?&quot;);</span>
+<span class="nc" id="L35">                        String name = input.nextLine();</span>
+<span class="nc" id="L36">                        System.out.println(&quot;What is your card ID?&quot;);</span>
+<span class="nc" id="L37">                        String id = input.nextLine();</span>
+<span class="nc" id="L38">                        visitor = findMember(members, name, id);</span>
+<span class="nc bnc" id="L39" title="All 2 branches missed.">                        if (visitor == null) {</span>
+<span class="nc" id="L40">                            System.out.println(&quot;It seems you are not in our record. Do you wish to register? (yes/no)&quot;);</span>
+<span class="nc" id="L41">                            String toRegister = input.nextLine();</span>
+<span class="nc bnc" id="L42" title="All 2 branches missed.">                            if(toRegister.equals(&quot;yes&quot;)){</span>
+<span class="nc" id="L43">				System.out.println(&quot;What is your full name?&quot;);</span>
+<span class="nc" id="L44">        			String nameVisitor = input.nextLine();</span>
+<span class="nc" id="L45">                                visitor = register(members, nameVisitor);</span>
                             }
                             else{
                                 break;
                             }
 
                         }
-<span class="nc" id="L48">                    }</span>
+<span class="nc" id="L52">                    }</span>
                     else{
-<span class="nc" id="L50">                        System.out.println(&quot;Incorrect input&quot;);</span>
-<span class="nc" id="L51">                        break;</span>
+<span class="nc" id="L54">                        System.out.println(&quot;Incorrect input&quot;);</span>
+<span class="nc" id="L55">                        break;</span>
                     }
 
-<span class="nc" id="L54">                    int browsing =1;</span>
+<span class="nc" id="L58">                    int browsing =1;</span>
                     do {
-<span class="nc" id="L56">                        System.out.println(&quot;Do you wish to browse a section or are you looking for a specific item?&quot;);</span>
-<span class="nc" id="L57">                        System.out.println(&quot;Type \&quot;section\&quot; to view the genres available or \&quot;item\&quot; to look for a book.&quot;);</span>
-<span class="nc" id="L58">                        String toSearch = input.nextLine();</span>
-<span class="nc" id="L59">                        List&lt;LibraryItem&gt; itemsFound = new ArrayList&lt;&gt;();</span>
-<span class="nc bnc" id="L60" title="All 2 branches missed.">                        if (toSearch.equals(&quot;section&quot;)) {</span>
-<span class="nc" id="L61">                            System.out.println(&quot;Please choose from the following genres:&quot;);</span>
-<span class="nc" id="L62">                            List&lt;String&gt; genres = new ArrayList&lt;&gt;();</span>
-<span class="nc bnc" id="L63" title="All 2 branches missed.">                            for( LibraryItem item: items){</span>
-<span class="nc" id="L64">                                String genre = item.getSection();</span>
-<span class="nc bnc" id="L65" title="All 2 branches missed.">                                if(!genres.contains(genre)){</span>
-<span class="nc" id="L66">                                    genres.add(genre);</span>
+<span class="nc" id="L60">                        System.out.println(&quot;Do you wish to browse a section or are you looking for a specific item?&quot;);</span>
+<span class="nc" id="L61">                        System.out.println(&quot;Type \&quot;section\&quot; to view the genres available or \&quot;item\&quot; to look for a book.&quot;);</span>
+<span class="nc" id="L62">                        String toSearch = input.nextLine();</span>
+<span class="nc" id="L63">                        List&lt;LibraryItem&gt; itemsFound = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L64" title="All 2 branches missed.">                        if (toSearch.equals(&quot;section&quot;)) {</span>
+<span class="nc" id="L65">                            System.out.println(&quot;Please choose from the following genres:&quot;);</span>
+<span class="nc" id="L66">                            List&lt;String&gt; genres = new ArrayList&lt;&gt;();</span>
+<span class="nc bnc" id="L67" title="All 2 branches missed.">                            for( LibraryItem item: items){</span>
+<span class="nc" id="L68">                                String genre = item.getSection();</span>
+<span class="nc bnc" id="L69" title="All 2 branches missed.">                                if(!genres.contains(genre)){</span>
+<span class="nc" id="L70">                                    genres.add(genre);</span>
                                 }
-<span class="nc" id="L68">                            }</span>
-<span class="nc bnc" id="L69" title="All 2 branches missed.">                            for( String genre: genres){</span>
-<span class="nc" id="L70">                                System.out.println(genre);</span>
-<span class="nc" id="L71">                            }</span>
+<span class="nc" id="L72">                            }</span>
+<span class="nc bnc" id="L73" title="All 2 branches missed.">                            for( String genre: genres){</span>
+<span class="nc" id="L74">                                System.out.println(genre);</span>
+<span class="nc" id="L75">                            }</span>
 
-<span class="nc" id="L73">                            String section = input.nextLine();</span>
-<span class="nc" id="L74">                            itemsFound = visitor.search(items, &quot;&quot;, &quot;&quot;, section);</span>
-<span class="nc bnc" id="L75" title="All 2 branches missed.">                            for (LibraryItem item : itemsFound) {</span>
-<span class="nc" id="L76">                                System.out.println(item.getTitle() + &quot; &quot; + item.getAuthor() + &quot; ISBN: &quot;+ item.getISBN());</span>
-<span class="nc" id="L77">                                System.out.println(item.findLocation());</span>
-<span class="nc" id="L78">                                System.out.println();</span>
-<span class="nc" id="L79">                            }</span>
-<span class="nc bnc" id="L80" title="All 2 branches missed.">                            if(itemsFound.isEmpty()){</span>
-<span class="nc" id="L81">                                System.out.println(&quot;No items were found&quot;);</span>
+<span class="nc" id="L77">                            String section = input.nextLine();</span>
+<span class="nc" id="L78">                            itemsFound = visitor.search(items, &quot;&quot;, &quot;&quot;, section);</span>
+<span class="nc bnc" id="L79" title="All 2 branches missed.">                            for (LibraryItem item : itemsFound) {</span>
+<span class="nc" id="L80">                                System.out.println(item.getTitle() + &quot; &quot; + item.getAuthor() + &quot; ISBN: &quot;+ item.getISBN());</span>
+<span class="nc" id="L81">                                System.out.println(item.findLocation());</span>
+<span class="nc" id="L82">                                System.out.println();</span>
+<span class="nc" id="L83">                            }</span>
+<span class="nc bnc" id="L84" title="All 2 branches missed.">                            if(itemsFound.isEmpty()){</span>
+<span class="nc" id="L85">                                System.out.println(&quot;No items were found&quot;);</span>
                             }
-<span class="nc bnc" id="L83" title="All 2 branches missed.">                        } else if (toSearch.equals(&quot;item&quot;)){</span>
-<span class="nc" id="L84">                            System.out.println(&quot;What is the title of the book? (First letter should be uppercase)&quot;);</span>
-<span class="nc" id="L85">                            System.out.println(&quot;Type \&quot;unknown\&quot; if you don't know&quot;);</span>
-<span class="nc" id="L86">                            String titleBook= input.nextLine();</span>
-<span class="nc bnc" id="L87" title="All 2 branches missed.">                            if(titleBook.equals(&quot;unknown&quot;)) titleBook=&quot;&quot;;</span>
-<span class="nc" id="L88">                            System.out.println(&quot;Who is the author of the book? (Type \&quot;unknown\&quot; if you don't know)&quot;);</span>
-<span class="nc" id="L89">                            String authorBook = input.nextLine();</span>
-<span class="nc bnc" id="L90" title="All 2 branches missed.">                            if(authorBook.equals(&quot;unknown&quot;)) authorBook=&quot;&quot;;</span>
-<span class="nc" id="L91">                            itemsFound = visitor.search(items, titleBook, authorBook, &quot;&quot;);</span>
-<span class="nc bnc" id="L92" title="All 2 branches missed.">                            for (LibraryItem item : itemsFound) {</span>
-<span class="nc" id="L93">                                System.out.println(item.getTitle() + &quot; &quot; + item.getAuthor() + &quot; ISBN: &quot; + item.getISBN());</span>
-<span class="nc" id="L94">                                System.out.println(item.findLocation());</span>
-<span class="nc" id="L95">                                System.out.println();</span>
-<span class="nc" id="L96">                            }</span>
-<span class="nc bnc" id="L97" title="All 2 branches missed.">                            if(itemsFound.isEmpty()){</span>
-<span class="nc" id="L98">                                System.out.println(&quot;No items were found&quot;);</span>
+<span class="nc bnc" id="L87" title="All 2 branches missed.">                        } else if (toSearch.equals(&quot;item&quot;)){</span>
+<span class="nc" id="L88">                            System.out.println(&quot;What is the title of the book? (First letter should be uppercase)&quot;);</span>
+<span class="nc" id="L89">                            System.out.println(&quot;Type \&quot;unknown\&quot; if you don't know&quot;);</span>
+<span class="nc" id="L90">                            String titleBook= input.nextLine();</span>
+<span class="nc bnc" id="L91" title="All 2 branches missed.">                            if(titleBook.equals(&quot;unknown&quot;)) titleBook=&quot;&quot;;</span>
+<span class="nc" id="L92">                            System.out.println(&quot;Who is the author of the book? (Type \&quot;unknown\&quot; if you don't know)&quot;);</span>
+<span class="nc" id="L93">                            String authorBook = input.nextLine();</span>
+<span class="nc bnc" id="L94" title="All 2 branches missed.">                            if(authorBook.equals(&quot;unknown&quot;)) authorBook=&quot;&quot;;</span>
+<span class="nc" id="L95">                            itemsFound = visitor.search(items, titleBook, authorBook, &quot;&quot;);</span>
+<span class="nc bnc" id="L96" title="All 2 branches missed.">                            for (LibraryItem item : itemsFound) {</span>
+<span class="nc" id="L97">                                System.out.println(item.getTitle() + &quot; &quot; + item.getAuthor() + &quot; ISBN: &quot; + item.getISBN());</span>
+<span class="nc" id="L98">                                System.out.println(item.findLocation());</span>
+<span class="nc" id="L99">                                System.out.println();</span>
+<span class="nc" id="L100">                            }</span>
+<span class="nc bnc" id="L101" title="All 2 branches missed.">                            if(itemsFound.isEmpty()){</span>
+<span class="nc" id="L102">                                System.out.println(&quot;No items were found&quot;);</span>
                             }
                         }
 
 
-<span class="nc" id="L103">                        System.out.println(&quot;Do you wish to borrow one of the items you've seen? (yes/no)&quot;);</span>
-<span class="nc" id="L104">                        String toBorrow = input.nextLine();</span>
-<span class="nc bnc" id="L105" title="All 2 branches missed.">                        if(toBorrow.equals(&quot;yes&quot;)){</span>
-<span class="nc" id="L106">                            System.out.println(&quot;Please type the ISBN of the item&quot;);</span>
-<span class="nc" id="L107">                            String isbn = input.nextLine();</span>
-<span class="nc" id="L108">                            LibraryItem itemToBorrow = null;</span>
-<span class="nc bnc" id="L109" title="All 2 branches missed.">                            while(itemToBorrow == null) {</span>
-<span class="nc bnc" id="L110" title="All 2 branches missed.">                                for (LibraryItem item : itemsFound) {</span>
-<span class="nc bnc" id="L111" title="All 2 branches missed.">                                    if (item.getISBN().equals(isbn)) itemToBorrow = item;</span>
-<span class="nc" id="L112">                                }</span>
-<span class="nc bnc" id="L113" title="All 2 branches missed.">                                if(itemToBorrow == null){</span>
-<span class="nc" id="L114">                                    System.out.println(&quot;Wrong ISBN. Please type it again.&quot;);</span>
-<span class="nc" id="L115">                                    isbn = input.nextLine();</span>
+<span class="nc" id="L107">                        System.out.println(&quot;Do you wish to borrow one of the items you've seen? (yes/no)&quot;);</span>
+<span class="nc" id="L108">                        String toBorrow = input.nextLine();</span>
+<span class="nc bnc" id="L109" title="All 2 branches missed.">                        if(toBorrow.equals(&quot;yes&quot;)){</span>
+<span class="nc" id="L110">                            System.out.println(&quot;Please type the ISBN of the item&quot;);</span>
+<span class="nc" id="L111">                            String isbn = input.nextLine();</span>
+<span class="nc" id="L112">                            LibraryItem itemToBorrow = null;</span>
+<span class="nc bnc" id="L113" title="All 2 branches missed.">                            while(itemToBorrow == null) {</span>
+<span class="nc bnc" id="L114" title="All 2 branches missed.">                                for (LibraryItem item : itemsFound) {</span>
+<span class="nc bnc" id="L115" title="All 2 branches missed.">                                    if (item.getISBN().equals(isbn)) itemToBorrow = item;</span>
+<span class="nc" id="L116">                                }</span>
+<span class="nc bnc" id="L117" title="All 2 branches missed.">                                if(itemToBorrow == null){</span>
+<span class="nc" id="L118">                                    System.out.println(&quot;Wrong ISBN. Please type it again.&quot;);</span>
+<span class="nc" id="L119">                                    isbn = input.nextLine();</span>
                                 }
                             }
 
-<span class="nc" id="L119">                            String result = visitor.borrow(itemToBorrow);</span>
-<span class="nc" id="L120">                            System.out.println(result);</span>
-<span class="nc bnc" id="L121" title="All 2 branches missed.">                            if(result.equals(&quot;Item can't be borrowed&quot;)){</span>
-<span class="nc" id="L122">                                System.out.println(&quot;Do you want to read it in the library? (yes/no)&quot;);</span>
-<span class="nc" id="L123">                                String readInLibrary = input.nextLine();</span>
-<span class="nc bnc" id="L124" title="All 2 branches missed.">                                if(readInLibrary.equals(&quot;yes&quot;)) {</span>
-<span class="nc" id="L125">                                    visitor.readingInLibrary(itemToBorrow);</span>
-<span class="nc" id="L126">                                    System.out.println(&quot;Please type \&quot;done\&quot; when you're finished&quot;);</span>
-<span class="nc" id="L127">                                    String done = input.nextLine();</span>
-<span class="nc" id="L128">                                    visitor.finishedReading(itemToBorrow);</span>
+<span class="nc" id="L123">                            String result = visitor.borrow(itemToBorrow);</span>
+<span class="nc" id="L124">                            System.out.println(result);</span>
+<span class="nc bnc" id="L125" title="All 2 branches missed.">                            if(result.equals(&quot;Item can't be borrowed&quot;)){</span>
+<span class="nc" id="L126">                                System.out.println(&quot;Do you want to read it in the library? (yes/no)&quot;);</span>
+<span class="nc" id="L127">                                String readInLibrary = input.nextLine();</span>
+<span class="nc bnc" id="L128" title="All 2 branches missed.">                                if(readInLibrary.equals(&quot;yes&quot;)) {</span>
+<span class="nc" id="L129">                                    visitor.readingInLibrary(itemToBorrow);</span>
+<span class="nc" id="L130">                                    System.out.println(&quot;Please type \&quot;done\&quot; when you're finished&quot;);</span>
+<span class="nc" id="L131">                                    String done = input.nextLine();</span>
+<span class="nc" id="L132">                                    visitor.finishedReading(itemToBorrow);</span>
                                 }
                             }
                         }
 
 
-<span class="nc" id="L134">                        System.out.println(&quot;Do you wish to browse again? (yes/no)&quot;);</span>
-<span class="nc" id="L135">                        String toBrowse = input.nextLine();</span>
-<span class="nc bnc" id="L136" title="All 2 branches missed.">                        if(!toBrowse.equals(&quot;yes&quot;)) browsing = 0;</span>
+<span class="nc" id="L138">                        System.out.println(&quot;Do you wish to browse again? (yes/no)&quot;);</span>
+<span class="nc" id="L139">                        String toBrowse = input.nextLine();</span>
+<span class="nc bnc" id="L140" title="All 2 branches missed.">                        if(!toBrowse.equals(&quot;yes&quot;)) browsing = 0;</span>
 
-<span class="nc bnc" id="L138" title="All 2 branches missed.">                    }while(browsing == 1);</span>
+<span class="nc bnc" id="L142" title="All 2 branches missed.">                    }while(browsing == 1);</span>
 
 
-<span class="nc" id="L141">                    break;</span>
+<span class="nc" id="L145">                    break;</span>
 
                 case &quot;add book&quot;:
-<span class="nc" id="L144">                    System.out.println(&quot;What is it? (book/document)&quot;);</span>
-<span class="nc" id="L145">                    String itemToAdd = input.nextLine();</span>
-<span class="nc" id="L146">                    System.out.println(&quot;What is the title of the book?&quot;);</span>
-<span class="nc" id="L147">                    String titleBook = input.nextLine();</span>
-<span class="nc" id="L148">                    System.out.println(&quot;What is the author's name?&quot;);</span>
-<span class="nc" id="L149">                    String authorBook = input.nextLine();</span>
+<span class="nc" id="L148">                    System.out.println(&quot;What is it? (book/document)&quot;);</span>
+<span class="nc" id="L149">                    String itemToAdd = input.nextLine();</span>
+<span class="nc" id="L150">                    System.out.println(&quot;What is the title of the book?&quot;);</span>
+<span class="nc" id="L151">                    String titleBook = input.nextLine();</span>
+<span class="nc" id="L152">                    System.out.println(&quot;What is the author's name?&quot;);</span>
+<span class="nc" id="L153">                    String authorBook = input.nextLine();</span>
                     //get publication date here
-<span class="nc" id="L151">                    System.out.println(&quot;What format is it in? (physical/digital/audio)&quot;);</span>
-<span class="nc" id="L152">                    String formatBook = input.nextLine();</span>
-<span class="nc" id="L153">                    System.out.println(&quot;What genre is it?&quot;);</span>
-<span class="nc" id="L154">                    String genreBook = input.nextLine();</span>
-<span class="nc" id="L155">                    addBook(items, itemToAdd, titleBook, authorBook, formatBook, genreBook);</span>
+<span class="nc" id="L155">                    System.out.println(&quot;What format is it in? (physical/digital/audio)&quot;);</span>
+<span class="nc" id="L156">                    String formatBook = input.nextLine();</span>
+<span class="nc" id="L157">                    System.out.println(&quot;What genre is it?&quot;);</span>
+<span class="nc" id="L158">                    String genreBook = input.nextLine();</span>
+<span class="nc" id="L159">                    addBook(items, itemToAdd, titleBook, authorBook, formatBook, genreBook);</span>
 
-<span class="nc bnc" id="L157" title="All 2 branches missed.">                    for(LibraryItem item : items){</span>
-<span class="nc" id="L158">                        System.out.println(item.getTitle() + &quot;; format: &quot; + item.getFormat() + &quot;; copies: &quot; + item.getCopiesAvailable());</span>
-<span class="nc" id="L159">                    }</span>
-<span class="nc" id="L160">                    break;</span>
+<span class="nc bnc" id="L161" title="All 2 branches missed.">                    for(LibraryItem item : items){</span>
+<span class="nc" id="L162">                        System.out.println(item.getTitle() + &quot;; format: &quot; + item.getFormat() + &quot;; copies: &quot; + item.getCopiesAvailable());</span>
+<span class="nc" id="L163">                    }</span>
+<span class="nc" id="L164">                    break;</span>
 
                 case &quot;leave&quot;:
-<span class="nc" id="L163">                    terminate = 1;</span>
-<span class="nc" id="L164">                    break;</span>
+<span class="nc" id="L167">                    terminate = 1;</span>
+<span class="nc" id="L168">                    break;</span>
                 default:
                     break;
             }
 
-<span class="nc" id="L169">        }</span>
+<span class="nc" id="L173">        }</span>
 
 
 
 
-<span class="nc" id="L174">    }</span>
+<span class="nc" id="L178">    }</span>
 
 
     public static Member findMember(List&lt;Member&gt; members, String name, String id){
-<span class="pc bpc" id="L178" title="1 of 2 branches missed.">        for(Member visitor : members){</span>
-<span class="pc bpc" id="L179" title="2 of 4 branches missed.">            if(visitor.getName().equals(name) &amp;&amp; visitor.getCardID().equals(id))</span>
-<span class="fc" id="L180">                return visitor;</span>
-<span class="nc" id="L181">        }</span>
+<span class="fc" id="L182">        Member result = null;</span>
+<span class="fc bfc" id="L183" title="All 2 branches covered.">        for(Member visitor : members){</span>
+<span class="pc bpc" id="L184" title="1 of 4 branches missed.">            if(visitor.getName().equals(name) &amp;&amp; visitor.getCardID().equals(id))</span>
+<span class="fc" id="L185">                result = visitor;</span>
+<span class="fc" id="L186">        }</span>
 
-<span class="nc" id="L183">        return null;</span>
+<span class="fc" id="L188">        return result;</span>
     }
 
     public static String generateID(){
-<span class="fc" id="L187">        String id = &quot;&quot;;</span>
-<span class="fc" id="L188">        Random r = new Random();</span>
-<span class="fc bfc" id="L189" title="All 2 branches covered.">        for(int i=0; i&lt;7; i++){</span>
-<span class="fc bfc" id="L190" title="All 2 branches covered.">            if(r.nextBoolean()) {</span>
-<span class="fc" id="L191">                char c = (char) (r.nextInt(26) + 'a');</span>
-<span class="fc" id="L192">                id = id + c;</span>
-<span class="fc" id="L193">            }</span>
+<span class="fc" id="L192">        String id = &quot;&quot;;</span>
+<span class="fc" id="L193">        Random r = new Random();</span>
+<span class="fc bfc" id="L194" title="All 2 branches covered.">        for(int i=0; i&lt;7; i++){</span>
+<span class="fc bfc" id="L195" title="All 2 branches covered.">            if(r.nextBoolean()) {</span>
+<span class="fc" id="L196">                char c = (char) (r.nextInt(26) + 'a');</span>
+<span class="fc" id="L197">                id = id + c;</span>
+<span class="fc" id="L198">            }</span>
             else{
-<span class="fc" id="L195">                int c = r.nextInt(10);</span>
-<span class="fc" id="L196">                id = id + c;</span>
+<span class="fc" id="L200">                int c = r.nextInt(10);</span>
+<span class="fc" id="L201">                id = id + c;</span>
             }
         }
 
-<span class="fc" id="L200">        return id;</span>
+<span class="fc" id="L205">        return id;</span>
     }
 
-    public static Member register(List&lt;Member&gt; members){
-<span class="nc" id="L204">        Scanner input = new Scanner(System.in);</span>
-<span class="nc" id="L205">        System.out.println(&quot;What is your full name?&quot;);</span>
-<span class="nc" id="L206">        String name = input.nextLine();</span>
-<span class="nc" id="L207">        String id = generateID();</span>
-<span class="nc" id="L208">        Member visitor = new Member(name, id);</span>
-<span class="nc" id="L209">        members.add(visitor);</span>
-<span class="nc" id="L210">        System.out.println(&quot;Name: &quot; + visitor.getName());</span>
-<span class="nc" id="L211">        System.out.println(&quot;Card ID: &quot; + visitor.getCardID());</span>
+    public static Member register(List&lt;Member&gt; members, String name){
+        
+<span class="fc" id="L210">        String id = generateID();</span>
+<span class="fc" id="L211">        Member visitor = new Member(name, id);</span>
+<span class="fc" id="L212">        members.add(visitor);</span>
+<span class="fc" id="L213">        System.out.println(&quot;Name: &quot; + visitor.getName());</span>
+<span class="fc" id="L214">        System.out.println(&quot;Card ID: &quot; + visitor.getCardID());</span>
 
-<span class="nc" id="L213">        return visitor;</span>
+<span class="fc" id="L216">        return visitor;</span>
     }
 
     public static void setupCollection(List&lt;LibraryItem&gt; items){
-<span class="fc" id="L217">        LibraryItem book = new Book(&quot;Mistborn&quot;, &quot;Brandon Sanderson&quot;, null, generateID(), Boolean.TRUE, &quot;physical&quot;, &quot;Fantasy&quot;, 1, 5, generateID(), &quot;available&quot;);</span>
-<span class="fc" id="L218">        items.add(book);</span>
-<span class="fc" id="L219">        book = new Book(&quot;Harry Potter&quot;, &quot;JK Rowling&quot;, null, generateID(), Boolean.FALSE, &quot;physical&quot;, &quot;Fantasy&quot;, 1, 5, generateID(), &quot;available&quot;);</span>
-<span class="fc" id="L220">        items.add(book);</span>
-<span class="fc" id="L221">    }</span>
+<span class="fc" id="L220">        LibraryItem book = new Book(&quot;Mistborn&quot;, &quot;Brandon Sanderson&quot;, null, generateID(), Boolean.TRUE, &quot;physical&quot;, &quot;Fantasy&quot;, 1, 5, generateID(), &quot;available&quot;);</span>
+<span class="fc" id="L221">        items.add(book);</span>
+<span class="fc" id="L222">        book = new Book(&quot;Harry Potter&quot;, &quot;JK Rowling&quot;, null, generateID(), Boolean.FALSE, &quot;physical&quot;, &quot;Fantasy&quot;, 1, 5, generateID(), &quot;available&quot;);</span>
+<span class="fc" id="L223">        items.add(book);</span>
+<span class="fc" id="L224">        book = new Book(&quot;Pride and prejudice&quot;, &quot;Jane Austen&quot;, null, generateID(), Boolean.TRUE, &quot;physical&quot;, &quot;Romance&quot;, 1, 5, generateID(), &quot;available&quot;);</span>
+<span class="fc" id="L225">        items.add(book);</span>
+<span class="fc" id="L226">        book = new Book(&quot;Emma&quot;, &quot;Jane Austen&quot;, null, generateID(), Boolean.TRUE, &quot;physical&quot;, &quot;Romance&quot;, 1, 5, generateID(), &quot;available&quot;);</span>
+<span class="fc" id="L227">        items.add(book);</span>
+<span class="fc" id="L228">    }</span>
 
     public static void addBook(List&lt;LibraryItem&gt; items, String itemToAdd, String title, String author, String format, String section){
-<span class="nc" id="L224">        int itemAlreadyExists=0;</span>
-<span class="nc" id="L225">        LibraryItem newItem = null;</span>
-<span class="nc bnc" id="L226" title="All 2 branches missed.">        for(LibraryItem item : items){</span>
-<span class="nc bnc" id="L227" title="All 6 branches missed.">            if(item.getTitle().equals(title) &amp;&amp; item.getAuthor().equals(author) &amp;&amp; item.getFormat().equals(format)){</span>
-<span class="nc" id="L228">                item.setCopiesAvailable(item.getCopiesAvailable()+1);</span>
-<span class="nc" id="L229">                itemAlreadyExists=1;</span>
+<span class="fc" id="L231">        int itemAlreadyExists=0;</span>
+<span class="fc" id="L232">        LibraryItem newItem = null;</span>
+<span class="fc bfc" id="L233" title="All 2 branches covered.">        for(LibraryItem item : items){</span>
+<span class="pc bpc" id="L234" title="2 of 6 branches missed.">            if(item.getTitle().equals(title) &amp;&amp; item.getAuthor().equals(author) &amp;&amp; item.getFormat().equals(format)){</span>
+<span class="fc" id="L235">                item.setCopiesAvailable(item.getCopiesAvailable()+1);</span>
+<span class="fc" id="L236">                itemAlreadyExists=1;</span>
             }
-<span class="nc" id="L231">        }</span>
-<span class="nc bnc" id="L232" title="All 2 branches missed.">        if(itemAlreadyExists == 0){</span>
-<span class="nc bnc" id="L233" title="All 2 branches missed.">            if(itemToAdd.equals(&quot;book&quot;)) {</span>
-<span class="nc" id="L234">                newItem = new Book(title, author, null, generateID(), Boolean.TRUE, format, section, 1, 1, generateID(), &quot;available&quot;);</span>
-<span class="nc" id="L235">                items.add(newItem);</span>
+<span class="fc" id="L238">        }</span>
+<span class="fc bfc" id="L239" title="All 2 branches covered.">        if(itemAlreadyExists == 0){</span>
+<span class="fc bfc" id="L240" title="All 2 branches covered.">            if(itemToAdd.equals(&quot;book&quot;)) {</span>
+<span class="fc" id="L241">                newItem = new Book(title, author, null, generateID(), Boolean.TRUE, format, section, 1, 1, generateID(), &quot;available&quot;);</span>
+<span class="fc" id="L242">                items.add(newItem);</span>
             }
-<span class="nc bnc" id="L237" title="All 2 branches missed.">            else if(itemToAdd.equals(&quot;document&quot;)){</span>
-<span class="nc" id="L238">                List&lt;String&gt; references = new ArrayList&lt;&gt;();</span>
-<span class="nc" id="L239">                Scanner input = new Scanner(System.in);</span>
-<span class="nc" id="L240">                System.out.println(&quot;Do you want to add a reference? (yes/no)&quot;);</span>
-<span class="nc" id="L241">                String addRef = input.nextLine();</span>
-<span class="nc bnc" id="L242" title="All 2 branches missed.">                while (addRef.equals(&quot;yes&quot;)){</span>
-<span class="nc" id="L243">                    System.out.println(&quot;Please type in the reference&quot;);</span>
-<span class="nc" id="L244">                    String ref = input.nextLine();</span>
-<span class="nc" id="L245">                    references.add(ref);</span>
-<span class="nc" id="L246">                    System.out.println(&quot;Do you want to add another reference? (yes/no)&quot;);</span>
-<span class="nc" id="L247">                    addRef = input.nextLine();</span>
-<span class="nc" id="L248">                }</span>
-<span class="nc" id="L249">                newItem = new Document(title, author, null, generateID(), Boolean.TRUE, format, section, 1, 1, 0, references);</span>
-<span class="nc" id="L250">                items.add(newItem);</span>
-<span class="nc" id="L251">            }</span>
+<span class="fc bfc" id="L244" title="All 2 branches covered.">            else if(itemToAdd.equals(&quot;document&quot;)){</span>
+<span class="fc" id="L245">                List&lt;String&gt; references = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L246">                newItem = new Document(title, author, null, generateID(), Boolean.TRUE, format, section, 1, 1, 0, references);</span>
+<span class="fc" id="L247">                items.add(newItem);</span>
+<span class="fc" id="L248">            }</span>
             else {
-<span class="nc" id="L253">                System.out.println(&quot;Can't recognize type&quot;);</span>
+<span class="fc" id="L250">                System.out.println(&quot;Can't recognize type&quot;);</span>
             }
         }
-<span class="nc" id="L256">    }</span>
+<span class="fc" id="L253">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

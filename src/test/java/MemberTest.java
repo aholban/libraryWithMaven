@@ -99,4 +99,15 @@ public class MemberTest {
         String result = person.borrow(book);
         assertEquals("Successfully borrowed", result);
     }
+
+    @Test
+    public void testReturnBook(){
+        Member person = new Member("Andreea Holban", "12345");
+        Book book = new Book("Pride and Prejudice", "Jane Austen", Boolean.TRUE, "available");
+        person.setNumberBooksBorrowed(2);
+        book.setCopiesAvailable(3);
+        person.returnBook(book);
+        assertEquals(4, book.getCopiesAvailable());
+        assertEquals(1, person.getNumberBooksBorrowed());
+    }
 }

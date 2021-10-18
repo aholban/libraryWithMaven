@@ -30,7 +30,7 @@ public class Member implements Searchable{
 
     public String borrow(LibraryItem book){
         String result = "";
-        if(book.getBorrowable()){
+        if(Boolean.TRUE.equals(book.getBorrowable())){
             if(this.numberBooksBorrowed<5 && book.getCopiesAvailable()>0){
                 if(!book.getFormat().equals("digital")) {
                     book.setCopiesAvailable(book.getCopiesAvailable() - 1);
@@ -53,8 +53,13 @@ public class Member implements Searchable{
         return result;
     }
 
+    public void returnBook(LibraryItem book){
+        book.setCopiesAvailable(book.getCopiesAvailable() + 1);
+        this.numberBooksBorrowed = numberBooksBorrowed -1;
+    }
+
     public void readingInLibrary(LibraryItem book){
-        book.setCopiesAvailable(book.getCopiesAvailable() - 1);
+        if(!book.getFormat().equals("digital")) book.setCopiesAvailable(book.getCopiesAvailable() - 1);
         System.out.println("You are reading " + book.getTitle() + " in the library.");
     }
 

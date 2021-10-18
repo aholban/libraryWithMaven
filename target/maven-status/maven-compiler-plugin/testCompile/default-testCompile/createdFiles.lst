@@ -1,5 +1,8 @@
+SearchableTest.class
 MainTest.class
 DocumentTest.class
-MemberTest.class
 LibraryItemTest.class
 BookTest.class
+MagazineTest.class
+BlueprintTest.class
+MemberTest.class

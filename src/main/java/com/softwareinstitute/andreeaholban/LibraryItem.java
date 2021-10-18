@@ -106,7 +106,7 @@ public abstract class LibraryItem implements Searchable{
 
     public String findLocation(){
         String location = "";
-        if(format.equals("Digital")){
+        if(format.equals("digital")){
             location = "Check our digital catalogue on one of our computers.";
         }
         else{

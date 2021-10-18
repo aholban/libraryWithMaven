@@ -12,12 +12,17 @@ public class Document extends LibraryItem{
     private List&lt;String&gt; references;
 
     ///////////////////////////////////////////////Constructors/////////////////////////////////////////////////////////////////
-    public Document(String title, String author, LocalDate publicationDate, String ISBN, Boolean isBorrowable, String format, String section, int shelf, int copiesAvailable, int citationsNumber, List&lt;String&gt; references) {
-<span class="fc" id="L16">        super(title, publicationDate, ISBN, isBorrowable, format, section, shelf, copiesAvailable);</span>
+    public Document(String title, String author){
+<span class="fc" id="L16">        super(title);</span>
 <span class="fc" id="L17">        this.authors = author;</span>
-<span class="fc" id="L18">        this.citationsNumber = citationsNumber;</span>
-<span class="fc" id="L19">        this.references = references;</span>
-<span class="fc" id="L20">    }</span>
+<span class="fc" id="L18">    }</span>
+
+    public Document(String title, String author, LocalDate publicationDate, String ISBN, Boolean isBorrowable, String format, String section, int shelf, int copiesAvailable, int citationsNumber, List&lt;String&gt; references) {
+<span class="fc" id="L21">        super(title, publicationDate, ISBN, isBorrowable, format, section, shelf, copiesAvailable);</span>
+<span class="fc" id="L22">        this.authors = author;</span>
+<span class="fc" id="L23">        this.citationsNumber = citationsNumber;</span>
+<span class="fc" id="L24">        this.references = references;</span>
+<span class="fc" id="L25">    }</span>
 
     ////////////////////////////////////////////////Methods//////////////////////////////////////////////////////////////////////
 
@@ -25,29 +30,29 @@ public class Document extends LibraryItem{
 
 
     public int getCitationsNumber() {
-<span class="nc" id="L28">        return citationsNumber;</span>
+<span class="fc" id="L33">        return citationsNumber;</span>
     }
 
     public void setCitationsNumber(int citationsNumber) {
-<span class="nc" id="L32">        this.citationsNumber = citationsNumber;</span>
-<span class="nc" id="L33">    }</span>
+<span class="fc" id="L37">        this.citationsNumber = citationsNumber;</span>
+<span class="fc" id="L38">    }</span>
 
     public List&lt;String&gt; getReferences() {
-<span class="nc" id="L36">        return references;</span>
+<span class="fc" id="L41">        return references;</span>
     }
 
     public void setReferences(List&lt;String&gt; references) {
-<span class="nc" id="L40">        this.references = references;</span>
-<span class="nc" id="L41">    }</span>
+<span class="fc" id="L45">        this.references = references;</span>
+<span class="fc" id="L46">    }</span>
 
     @Override
     public String getAuthor() {
-<span class="nc" id="L45">        return authors;</span>
+<span class="fc" id="L50">        return authors;</span>
     }
 
     @Override
     public void setAuthor(String author) {
-<span class="nc" id="L50">        this.authors = author;</span>
-<span class="nc" id="L51">    }</span>
+<span class="fc" id="L55">        this.authors = author;</span>
+<span class="fc" id="L56">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
