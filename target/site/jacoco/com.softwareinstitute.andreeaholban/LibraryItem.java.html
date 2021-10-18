@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>LibraryItem.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">libraryproject</a> &gt; <a href="index.source.html" class="el_package">com.softwareinstitute.andreeaholban</a> &gt; <span class="el_source">LibraryItem.java</span></div><h1>LibraryItem.java</h1><pre class="source lang-java linenums">package com.softwareinstitute.andreeaholban;
+
+import java.time.LocalDate;
+
+public abstract class LibraryItem implements Searchable{
+
+    ///////////////////////////////////////Attributes//////////////////////////////////////////////////
+
+    private String title;
+    private LocalDate publicationDate;
+    private String ISBN;
+    private Boolean isBorrowable;
+    private String format;
+    private String section;
+    private int shelf;
+    private int copiesAvailable;
+
+    ///////////////////////////////////////Constraints////////////////////////////////////////////////
+
+<span class="fc" id="L20">    public LibraryItem(String title, LocalDate publicationDate, String ISBN, Boolean isBorrowable, String format, String section, int shelf, int copiesAvailable){</span>
+<span class="fc" id="L21">        this.title = title;</span>
+<span class="fc" id="L22">        this.publicationDate = publicationDate;</span>
+<span class="fc" id="L23">        this.ISBN = ISBN;</span>
+<span class="fc" id="L24">        this.isBorrowable = isBorrowable;</span>
+<span class="fc" id="L25">        this.format = format;</span>
+<span class="fc" id="L26">        this.section = section;</span>
+<span class="fc" id="L27">        this.shelf = shelf;</span>
+<span class="fc" id="L28">        this.copiesAvailable = copiesAvailable;</span>
+<span class="fc" id="L29">    }</span>
+
+    ///////////////////////////////////////Methods///////////////////////////////////////////////////
+
+
+    public String getTitle() {
+<span class="fc" id="L35">        return title;</span>
+    }
+
+    public void setTitle(String title) {
+<span class="fc" id="L39">        this.title = title;</span>
+<span class="fc" id="L40">    }</span>
+
+
+    public LocalDate getPublicationDate() {
+<span class="fc" id="L44">        return publicationDate;</span>
+    }
+
+    public void setPublicationDate(LocalDate publicationDate) {
+<span class="fc" id="L48">        this.publicationDate = publicationDate;</span>
+<span class="fc" id="L49">    }</span>
+
+    public String getISBN() {
+<span class="fc" id="L52">        return ISBN;</span>
+    }
+
+    public void setISBN(String ISBN) {
+<span class="fc" id="L56">        this.ISBN = ISBN;</span>
+<span class="fc" id="L57">    }</span>
+
+    public Boolean getBorrowable() {
+<span class="fc" id="L60">        return isBorrowable;</span>
+    }
+
+    public void setBorrowable(Boolean borrowable) {
+<span class="fc" id="L64">        isBorrowable = borrowable;</span>
+<span class="fc" id="L65">    }</span>
+
+    public String getFormat() {
+<span class="fc" id="L68">        return format;</span>
+    }
+
+    public void setFormat(String format) {
+<span class="fc" id="L72">        this.format = format;</span>
+<span class="fc" id="L73">    }</span>
+
+    public String getSection() {
+<span class="fc" id="L76">        return section;</span>
+    }
+
+    public void setSection(String section) {
+<span class="fc" id="L80">        this.section = section;</span>
+<span class="fc" id="L81">    }</span>
+
+    public int getShelf() {
+<span class="fc" id="L84">        return shelf;</span>
+    }
+
+    public void setShelf(int shelf) {
+<span class="fc" id="L88">        this.shelf = shelf;</span>
+<span class="fc" id="L89">    }</span>
+
+    public int getCopiesAvailable() {
+<span class="fc" id="L92">        return copiesAvailable;</span>
+    }
+
+    public void setCopiesAvailable(int copiesAvailable) {
+<span class="fc" id="L96">        this.copiesAvailable = copiesAvailable;</span>
+<span class="fc" id="L97">    }</span>
+
+    public abstract String getAuthor();
+
+    public abstract void setAuthor(String author);
+
+    public String findLocation(){
+<span class="nc" id="L104">        String location = &quot;&quot;;</span>
+<span class="nc bnc" id="L105" title="All 2 branches missed.">        if(format.equals(&quot;Digital&quot;)){</span>
+<span class="nc" id="L106">            location = &quot;Check our digital catalogue on one of our computers.&quot;;</span>
+        }
+        else{
+<span class="nc" id="L109">            location = &quot;You can find it in the &quot; + section + &quot; section on the shelf &quot; + shelf;</span>
+        }
+<span class="nc" id="L111">        return location;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

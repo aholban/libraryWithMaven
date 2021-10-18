@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Member.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">libraryproject</a> &gt; <a href="index.source.html" class="el_package">com.softwareinstitute.andreeaholban</a> &gt; <span class="el_source">Member.java</span></div><h1>Member.java</h1><pre class="source lang-java linenums">package com.softwareinstitute.andreeaholban;
+
+import java.time.LocalDate;
+
+
+public class Member implements Searchable{
+    ////////////////////////////////////////////Attributes/////////////////////////////////////////////////////
+
+    private String name;
+    private String cardID;
+    private LocalDate issuedDate;
+    private int numberBooksBorrowed;
+
+    ////////////////////////////////////////////Constructors//////////////////////////////////////////////////
+
+    public Member(String name, String id){
+<span class="fc" id="L17">        this(name,id, LocalDate.now(), 0);</span>
+<span class="fc" id="L18">    }</span>
+<span class="fc" id="L19">    public Member(String name, String cardID, LocalDate issuedDate, int numberBooksBorrowed){</span>
+<span class="fc" id="L20">        this.name = name;</span>
+<span class="fc" id="L21">        this.cardID = cardID;</span>
+<span class="fc" id="L22">        this.issuedDate = issuedDate;</span>
+<span class="fc" id="L23">        this.numberBooksBorrowed = numberBooksBorrowed;</span>
+<span class="fc" id="L24">    }</span>
+
+    ////////////////////////////////////////////Methods///////////////////////////////////////////////////////
+
+
+
+
+    public String borrow(LibraryItem book){
+<span class="fc" id="L32">        String result = &quot;&quot;;</span>
+<span class="fc bfc" id="L33" title="All 2 branches covered.">        if(book.getBorrowable()){</span>
+<span class="fc bfc" id="L34" title="All 4 branches covered.">            if(this.numberBooksBorrowed&lt;5 &amp;&amp; book.getCopiesAvailable()&gt;0){</span>
+<span class="fc bfc" id="L35" title="All 2 branches covered.">                if(!book.getFormat().equals(&quot;digital&quot;)) {</span>
+<span class="fc" id="L36">                    book.setCopiesAvailable(book.getCopiesAvailable() - 1);</span>
+                }
+<span class="fc" id="L38">                this.numberBooksBorrowed = numberBooksBorrowed +1;</span>
+<span class="fc" id="L39">                result = &quot;Successfully borrowed&quot;;</span>
+            }
+<span class="fc bfc" id="L41" title="All 2 branches covered.">            else if (this.numberBooksBorrowed&gt;=5){</span>
+<span class="fc" id="L42">                result = &quot;You have reached the maximum amount of books you can borrow at once&quot;;</span>
+
+            }
+<span class="pc bpc" id="L45" title="1 of 2 branches missed.">            else if(book.getCopiesAvailable()==0){</span>
+<span class="fc" id="L46">                result = &quot;No copies of this item are currently available&quot;;</span>
+            }
+
+        }
+        else{
+<span class="fc" id="L51">            result = &quot;Item can't be borrowed&quot;;</span>
+        }
+<span class="fc" id="L53">        return result;</span>
+    }
+
+    public void readingInLibrary(LibraryItem book){
+<span class="fc" id="L57">        book.setCopiesAvailable(book.getCopiesAvailable() - 1);</span>
+<span class="fc" id="L58">        System.out.println(&quot;You are reading &quot; + book.getTitle() + &quot; in the library.&quot;);</span>
+<span class="fc" id="L59">    }</span>
+
+    public void finishedReading(LibraryItem book){
+<span class="fc" id="L62">        book.setCopiesAvailable(book.getCopiesAvailable() + 1);</span>
+<span class="fc" id="L63">        System.out.println(&quot;Finished reading &quot; + book.getTitle() );</span>
+<span class="fc" id="L64">    }</span>
+
+    public String getName() {
+<span class="fc" id="L67">        return name;</span>
+    }
+
+    public void setName(String name) {
+<span class="fc" id="L71">        this.name = name;</span>
+<span class="fc" id="L72">    }</span>
+
+    public String getCardID() {
+<span class="fc" id="L75">        return cardID;</span>
+    }
+
+    public void setCardID(String cardID) {
+<span class="fc" id="L79">        this.cardID = cardID;</span>
+<span class="fc" id="L80">    }</span>
+
+    public LocalDate getIssuedDate() {
+<span class="fc" id="L83">        return issuedDate;</span>
+    }
+
+    public void setIssuedDate(LocalDate issuedDate) {
+<span class="fc" id="L87">        this.issuedDate = issuedDate;</span>
+<span class="fc" id="L88">    }</span>
+
+    public int getNumberBooksBorrowed() {
+<span class="fc" id="L91">        return numberBooksBorrowed;</span>
+    }
+
+    public void setNumberBooksBorrowed(int numberBooksBorrowed) {
+<span class="fc" id="L95">        this.numberBooksBorrowed = numberBooksBorrowed;</span>
+<span class="fc" id="L96">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>

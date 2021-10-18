@@ -1,0 +1,9 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+libraryproject,com.softwareinstitute.andreeaholban,Document,21,20,0,0,9,5,6,1,6,1
+libraryproject,com.softwareinstitute.andreeaholban,Main,699,0,82,0,176,0,49,0,7,0
+libraryproject,com.softwareinstitute.andreeaholban,Blueprint,21,0,0,0,6,0,3,0,3,0
+libraryproject,com.softwareinstitute.andreeaholban,Book,0,69,0,0,0,18,0,9,0,9
+libraryproject,com.softwareinstitute.andreeaholban,Member,0,124,1,11,0,39,1,18,0,13
+libraryproject,com.softwareinstitute.andreeaholban,LibraryItem,18,83,2,0,5,34,2,17,1,17
+libraryproject,com.softwareinstitute.andreeaholban,Magazine,21,0,0,0,6,0,3,0,3,0
+libraryproject,com.softwareinstitute.andreeaholban,Searchable,101,0,32,0,12,0,17,0,1,0

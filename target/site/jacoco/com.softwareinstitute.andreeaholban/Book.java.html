@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Book.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">libraryproject</a> &gt; <a href="index.source.html" class="el_package">com.softwareinstitute.andreeaholban</a> &gt; <span class="el_source">Book.java</span></div><h1>Book.java</h1><pre class="source lang-java linenums">package com.softwareinstitute.andreeaholban;
+
+import java.time.LocalDate;
+
+public class Book extends LibraryItem{
+    ////////////////////////////////////////////Attributes//////////////////////////////////////////////////////////////
+
+    private String author;
+    private String refNumber;
+    private String status;
+
+    ////////////////////////////////////////////Constructors////////////////////////////////////////////////////////////
+
+    public Book(String title, String author, Boolean isBorrowable, String status){
+<span class="fc" id="L15">        this(title, author, null, &quot;&quot; , isBorrowable, &quot;physical&quot;, &quot;unknown&quot;, 1, 5, &quot;&quot;, status);</span>
+<span class="fc" id="L16">    }</span>
+
+    public Book(String title, String author, Boolean isBorrowable, String status, String refNumber){
+<span class="fc" id="L19">        this(title, author, null, &quot;&quot;, isBorrowable, &quot;physical&quot;, &quot;unknown&quot;, 1, 5, refNumber, status);</span>
+<span class="fc" id="L20">    }</span>
+
+    public Book(String title, String author, LocalDate publicationDate, String ISBN, Boolean isBorrowable, String format, String section, int shelf, int copiesAvailable, String refNumber, String status){
+<span class="fc" id="L23">        super(title, publicationDate, ISBN, isBorrowable, format, section, shelf, copiesAvailable);</span>
+<span class="fc" id="L24">        this.author = author;</span>
+<span class="fc" id="L25">        this.refNumber = refNumber;</span>
+<span class="fc" id="L26">        this.status = status;</span>
+<span class="fc" id="L27">    }</span>
+    /////////////////////////////////////////////Methods///////////////////////////////////////////////////////////////
+
+
+
+
+    public String getRefNumber() {
+<span class="fc" id="L34">        return refNumber;</span>
+    }
+
+    public void setRefNumber(String refNumber) {
+<span class="fc" id="L38">        this.refNumber = refNumber;</span>
+<span class="fc" id="L39">    }</span>
+
+    public String getStatus() {
+<span class="fc" id="L42">        return status;</span>
+    }
+
+    public void setStatus(String status) {
+<span class="fc" id="L46">        this.status = status;</span>
+<span class="fc" id="L47">    }</span>
+
+    public String getAuthor() {
+<span class="fc" id="L50">        return author;</span>
+    }
+
+    public void setAuthor(String author) {
+<span class="fc" id="L54">        this.author = author;</span>
+<span class="fc" id="L55">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.7.202105040129</span></div></body></html>
