@@ -6,7 +6,7 @@ Feature: Hello world!
         When I ask if text is Hello World!
         Then I should be told "Yes"
         
- #   Scenario: Text is not Hello World!
-  #      Given Text is "Hi!"
- #       When I ask if text is Hello World!
-  #      Then I should be told "No"
+    Scenario: Text is not Hello World!
+        Given Text is Hi!
+        When I ask if text is Hello World!
+        Then I should be told "No"

@@ -21,6 +21,11 @@ public class SimpleTest {
     }
 
 
+    @Given("Text is Hi!")
+    public void textIsHi() {
+        input = "Hi!";
+    }
+
     @When("I ask if text is Hello World!")
     public void iAskIfTextIsHelloWorld() {
         if(input.equals("Hello world!")) actualAnswer = "Yes";
