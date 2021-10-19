@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="8" failures="0" name="LibraryItemTest" time="0.004" errors="0" skipped="0">
+<testsuite tests="8" failures="0" name="LibraryItemTest" time="0" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="17+35-LTS-2724"/>
@@ -64,9 +64,9 @@
   <testcase classname="LibraryItemTest" name="testFindLocation" time="0"/>
   <testcase classname="LibraryItemTest" name="testSetBorrowable" time="0"/>
   <testcase classname="LibraryItemTest" name="testSetSection" time="0"/>
-  <testcase classname="LibraryItemTest" name="testSetPublicationDate" time="0.003"/>
+  <testcase classname="LibraryItemTest" name="testSetPublicationDate" time="0"/>
   <testcase classname="LibraryItemTest" name="testSetFormat" time="0"/>
   <testcase classname="LibraryItemTest" name="testSetISBN" time="0"/>
   <testcase classname="LibraryItemTest" name="testSetShelf" time="0"/>
-  <testcase classname="LibraryItemTest" name="testSetTitle" time="0.001"/>
+  <testcase classname="LibraryItemTest" name="testSetTitle" time="0"/>
 </testsuite>

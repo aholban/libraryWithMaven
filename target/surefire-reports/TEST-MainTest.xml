@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="7" failures="0" name="MainTest" time="0.08" errors="0" skipped="0">
+<testsuite tests="8" failures="0" name="MainTest" time="0.049" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="java.vm.version" value="17+35-LTS-2724"/>
@@ -62,10 +62,11 @@
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
   <testcase classname="MainTest" name="testAddExistingBook" time="0"/>
-  <testcase classname="MainTest" name="testAddNewBook" time="0.068"/>
+  <testcase classname="MainTest" name="testFindExistingGenres" time="0"/>
+  <testcase classname="MainTest" name="testAddNewBook" time="0.041"/>
   <testcase classname="MainTest" name="testFindMember" time="0"/>
-  <testcase classname="MainTest" name="testAddDocument" time="0.001"/>
-  <testcase classname="MainTest" name="testRegister" time="0.01"/>
+  <testcase classname="MainTest" name="testAddDocument" time="0"/>
+  <testcase classname="MainTest" name="testRegister" time="0.006"/>
   <testcase classname="MainTest" name="testSetUpCollection" time="0"/>
-  <testcase classname="MainTest" name="testAddUnrecognizableType" time="0.001"/>
+  <testcase classname="MainTest" name="testAddUnrecognizableType" time="0.002"/>
 </testsuite>
